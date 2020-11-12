@@ -33,15 +33,16 @@ public class MorseCodeConverter {
             String wordInEnglish = "";
 
             for (String letter: lettersInMorseArray) {
-                wordInEnglish += morseCodeTree.fetch(letter);
+                if (!(letter.equals(("")))) {
+                    wordInEnglish += morseCodeTree.fetch(letter);
+                }
             }
 
             wordInEnglish+=" ";
             sentenceInEnglish += wordInEnglish;
-
         }
 
-        return sentenceInEnglish;
+        return sentenceInEnglish.substring(0,sentenceInEnglish.length() - 1);
     }
 
     static String convertToEnglish(String code){
